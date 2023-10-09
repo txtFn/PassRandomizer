@@ -1,9 +1,12 @@
 .main {
-    margin-top: 25vh;
+    margin-top: 5vh;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: ridge black;
+    border-radius: 20px;
 }
 
 .main .password {

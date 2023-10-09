@@ -15,3 +15,19 @@ function randomizer() {
     }
     document.getElementById('pass').innerHTML = arr.join('');
 }
+
+function sixPinRandomizer() {
+    var arr = []
+    while (arr.length < 6) {
+        arr.push(Math.floor(Math.random() * 10));
+    }
+    document.getElementById('sixPin').innerHTML = arr.join('');
+}
+
+function fourPinRandomizer() {
+    var arr = []
+    while (arr.length < 4) {
+        arr.push(Math.floor(Math.random() * 10));
+    }
+    document.getElementById('fourPin').innerHTML = arr.join('');
+}
