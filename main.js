@@ -16,6 +16,17 @@ function randomizer() {
     document.getElementById('pass').innerHTML = arr.join('');
 }
 
+function longPassRandomizer() {
+    var arr = []
+    while (arr.length < 20) {
+        arr.push(smallAlphabet[Math.floor(Math.random() * 26)]);
+        arr.push(capitalAlphabet[Math.floor(Math.random() * 26)]);
+        arr.push(specialChar[Math.floor(Math.random() * 27)]);
+        arr.push(Math.floor(Math.random() * 10));
+    }
+    document.getElementById('longPass').innerHTML = arr.join('');
+}
+
 function sixPinRandomizer() {
     var arr = []
     while (arr.length < 6) {
