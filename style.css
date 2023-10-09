@@ -1,14 +1,71 @@
+:root {
+    --primary: #EBE4D1;
+    --secondary: #B4B4B3;
+    --tertiary: #26577C;
+    --accent: #E55604;
+    box-sizing: border-box;
+}
+
+.custom-primary {
+    color: var(--primary);
+}
+
+.custom-primary-bg {
+    background-color: var(--primary);
+}
+
+.custom-secondary {
+    color: var(--secondary);
+}
+
+.custom-secondary-bg {
+    background-color: var(--secondary);
+}
+
+.custom-tertiary {
+    color: var(--tertiary);
+}
+
+.custom-tertiary-bg {
+    background-color: var(--tertiary);
+}
+
+.custom-accent {
+    color: var(--accent);
+}
+
+.custom-accent-bg {
+    background-color: var(--accent);
+}
+
+
+body {
+    background-color: var(--primary);
+}
+
 .main {
-    margin-top: 5vh;
-    padding: 40px;
+    margin-top: 3vh;
+    padding: 0px 40px 40px;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: ridge black;
-    border-radius: 20px;
+    box-shadow: 0px 0px 10px 1px var(--secondary);
+    border-radius: 10px;
 }
 
 .main .password {
     width: 100%;
+    box-shadow: 0px 0px 5px 1px var(--secondary);
+    border-radius: 20px;
+}
+
+.btn-large {
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.btn-large:hover {
+    background-color: var(--accent);
 }
