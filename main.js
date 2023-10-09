@@ -11,7 +11,7 @@ function randomizer() {
         arr.push(smallAlphabet[Math.floor(Math.random() * 26)]);
         arr.push(capitalAlphabet[Math.floor(Math.random() * 26)]);
         arr.push(specialChar[Math.floor(Math.random() * 27)]);
+        arr.push(Math.floor(Math.random() * 10));
     }
-    console.log(arr);
     document.getElementById('pass').innerHTML = arr.join('');
 }
