@@ -17,34 +17,41 @@ function generatePass(a, b) {
 
 // ShortPass
 function randomizer() {
-    var arr = []
+    var arr = [];
+    var pass = [];
     var length = 12;
+    var genPass = document.getElementById('pass');
     generatePass(arr, length); // first to execute
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] in specialChar || arr[i] in capitalAlphabet || arr[i] in specialChar || arr[i] in numbers) {
-            document.getElementById('pass').innerHTML = arr.join('');
-            document.getElementById('pass').style.color = '#186F65';
-            document.getElementById('pass').style.fontWeight = 'bold';
-            document.getElementById('pass').style.textShadow = '0px 0px 10px #B9FFF8';
-        } else {
-            randomizer();
+        if (smallAlphabet.includes(arr[i]) || capitalAlphabet.includes(arr[i]) || specialChar.includes(arr[i]) || numbers.includes(arr[i])) {
+            pass.push(arr[i]);
+            if (pass.length === 12) {
+                document.getElementById('pass').innerHTML = pass.join('');
+                genPass.className += ' generated';
+            } else {
+                generatePass(arr, length);
+            }
         }
     }
 }
 
 // LongPass
 function longPassRandomizer() {
-    var arr = []
-    var length = 20
+    var arr = [];
+    var length = 20;
+    var pass = [];
+    var genPass = document.getElementById('longPass');
     generatePass(arr, length); // first to execute
+    // Checking if the password has capitalAlphabet, smallAlphabet, numbers and specialChar
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] in specialChar || arr[i] in capitalAlphabet || arr[i] in specialChar || arr[i] in numbers) {
-            document.getElementById('longPass').innerHTML = arr.join('');
-            document.getElementById('longPass').style.color = '#186F65';
-            document.getElementById('longPass').style.fontWeight = 'bold';
-            document.getElementById('longPass').style.textShadow = '0px 0px 10px #B9FFF8';
-        } else {
-            longPassRandomizer();
+        if (smallAlphabet.includes(arr[i]) || capitalAlphabet.includes(arr[i]) || specialChar.includes(arr[i]) || numbers.includes(arr[i])) {
+            pass.push(arr[i])
+            if (pass.length === 20) {
+                document.getElementById('longPass').innerHTML = pass.join('');
+                genPass.className += ' generated';
+            } else {
+                generatePass(arr, length);
+            }
         }
     }
 }
@@ -52,25 +59,23 @@ function longPassRandomizer() {
 // SixPin
 function sixPinRandomizer() {
     var arr = []
+    var genPass = document.getElementById('sixPin');
     while (arr.length < 6) {
         arr.push(Math.floor(Math.random() * 10));
     }
     document.getElementById('sixPin').innerHTML = arr.join('');
-    document.getElementById('sixPin').style.color = '#186F65';
-    document.getElementById('sixPin').style.fontWeight = 'bold';
-    document.getElementById('sixPin').style.textShadow = '0px 0px 10px #B9FFF8';
+    genPass.className += ' generated';
 }
 
 // FourPin
 function fourPinRandomizer() {
     var arr = []
+    var genPass = document.getElementById('fourPin');
     while (arr.length < 4) {
         arr.push(Math.floor(Math.random() * 10));
     }
     document.getElementById('fourPin').innerHTML = arr.join('');
-    document.getElementById('fourPin').style.color = '#186F65';
-    document.getElementById('fourPin').style.fontWeight = 'bold';
-    document.getElementById('fourPin').style.textShadow = '0px 0px 10px #B9FFF8';
+    genPass.className += ' generated';
 }
 
 // Sidenav
