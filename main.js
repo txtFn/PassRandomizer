@@ -1,59 +1,80 @@
-const smallAlphabet =
-    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-const capitalAlphabet =
-    ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-const specialChar =
-    ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '[', '}', ']', '|', ':', ';', ',', '.', '?', '/'];
-const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
 const strongPass = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '[', '}', ']', '|', ':', ';', ',', '.', '?', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-// PassGenerator
-function generatePass(a, b) {
-    while (a.length < b) {
-        a.push(strongPass[Math.floor(Math.random() * 89)]);
+// Pass Generator
+function generatePass(password, length) {
+    while (password.length < length) {
+        password.push(strongPass[Math.floor(Math.random() * 89)]);
     }
+}
+// Strong Password Checker
+function strongPassCheck(password) {
+    // Check for at least 8 characters
+    if (password.length < 8) {
+        return false;
+    }
+
+    // Check for at least one uppercase letter
+    if (!/[A-Z]/.test(password)) {
+        return false;
+    }
+
+    // Check for at least one lowercase letter
+    if (!/[a-z]/.test(password)) {
+        return false;
+    }
+
+    // Check for at least one digit
+    if (!/[0123456789]/.test(password)) {
+        return false;
+    }
+
+    // Check for at least one special character
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        return false;
+    }
+
+    // All criteria met, password is strong
+    return true;
 }
 
 // ShortPass
 function randomizer() {
-    var arr = [];
-    var pass = [];
+    var password = [];
     var length = 12;
-    var genPass = document.getElementById('pass');
-    generatePass(arr, length); // first to execute
-    for (let i = 0; i < arr.length; i++) {
-        if (smallAlphabet.includes(arr[i]) || capitalAlphabet.includes(arr[i]) || specialChar.includes(arr[i]) || numbers.includes(arr[i])) {
-            pass.push(arr[i]);
-            if (pass.length === 12) {
-                document.getElementById('pass').innerHTML = pass.join('');
-                genPass.className += ' generated';
-            } else {
-                generatePass(arr, length);
-            }
+    // first to execute
+    generatePass(password, length);
+    // Password regeneration if not strong
+    while (strongPassCheck(password) == false) {
+        password = []
+        generatePass(password, length);
+        if (strongPassCheck(password) == true) {
+            document.getElementById('pass').innerHTML = password.join('');
+            document.getElementById('pass').className += ' generated';
+            break;
         }
     }
+    document.getElementById('pass').innerHTML = password.join('');
+    document.getElementById('pass').className += ' generated';
 }
 
 // LongPass
 function longPassRandomizer() {
-    var arr = [];
+    var password = [];
     var length = 20;
-    var pass = [];
-    var genPass = document.getElementById('longPass');
-    generatePass(arr, length); // first to execute
-    // Checking if the password has capitalAlphabet, smallAlphabet, numbers and specialChar
-    for (let i = 0; i < arr.length; i++) {
-        if (smallAlphabet.includes(arr[i]) || capitalAlphabet.includes(arr[i]) || specialChar.includes(arr[i]) || numbers.includes(arr[i])) {
-            pass.push(arr[i])
-            if (pass.length === 20) {
-                document.getElementById('longPass').innerHTML = pass.join('');
-                genPass.className += ' generated';
-            } else {
-                generatePass(arr, length);
-            }
+    // first to execute
+    generatePass(password, length);
+    // Password regeneration if not strong
+    while (strongPassCheck(password) == false) {
+        password = []
+        generatePass(password, length);
+        if (strongPassCheck(password) == true) {
+            document.getElementById('longPass').innerHTML = password.join('');
+            document.getElementById('longPass').className += ' generated';
+            break;
         }
     }
+    document.getElementById('longPass').innerHTML = password.join('');
+    document.getElementById('longPass').className += ' generated';
 }
 
 // SixPin
