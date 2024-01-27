@@ -1,0 +1,76 @@
+:root {
+    --primary: #EBE4D1;
+    --secondary: #B4B4B3;
+    --tertiary: #26577C;
+    --accent: #E55604;
+    box-sizing: border-box;
+}
+
+.custom-primary {
+    color: var(--primary);
+}
+
+.custom-primary-bg {
+    background-color: var(--primary);
+}
+
+.custom-secondary {
+    color: var(--secondary);
+}
+
+.custom-secondary-bg {
+    background-color: var(--secondary);
+}
+
+.custom-tertiary {
+    color: var(--tertiary);
+}
+
+.custom-tertiary-bg {
+    background-color: var(--tertiary);
+}
+
+.custom-accent {
+    color: var(--accent);
+}
+
+.custom-accent-bg {
+    background-color: var(--accent);
+}
+
+
+body {
+    background-color: var(--primary);
+}
+
+/* ################################ MAIN ################################ */
+.main {
+    margin-top: 3vh;
+    padding: 0px 40px 40px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 1px var(--secondary);
+    border-radius: 10px;
+}
+
+.generated {
+    color: #186F65;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px #B9FFF8;
+}
+
+.main .password {
+    width: 100%;
+    box-shadow: inset var(--secondary) 0px 0px 20px -12px;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+}

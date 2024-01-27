@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Randomizer</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/455338289c.js" crossorigin="anonymous"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar-fixed">
+        <nav class="custom-tertiary-bg">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="index.html" class="brand-logo custom-brandLogo"><i><strong>One.Opt</strong></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="https://www.facebook.com/txtFn" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/janiphantom/" target="_blank">Instagram</a></li>
+                        <li><a href="https://github.com/txtFn" target="_blank">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Show Sidenav -->
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="container">
+                    <img class="circle materialboxed" src="img/One_DP.png" style="width: 100%; height: auto;">
+                    <span class="black-text name center">John Delos Reyes</span>
+                    <a href="mailto:delosreyesjohn191@gmail.com"><span
+                            class="black-text email center">delosreyesjohn191@gmail.com</span></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="https://www.facebook.com/txtFn" target="_blank"><i class="fa-brands fa-facebook"></i>Facebook</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="https://www.instagram.com/janiphantom/" target="_blank"><i
+                    class="fa-brands fa-instagram"></i>Instagram</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="https://github.com/txtFn" target="_blank"><i class="fa-brands fa-github"></i>Github</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+    </ul>
+
+    <div class="container">
+        <h4 class="slogan center"><b>Generate Strong Pins & Passwords!</b></h4>
+        <hr>
+        <div class="row">
+            <!-- Password Generator -->
+            <div class="col s12">
+                <div class="main hoverable">
+                    <br>
+                    <!-- Show Password -->
+                    <div class="password">
+                        <p class="flow-text center" id="pass">Password</p>
+                    </div>
+                    <!-- Set Number of Passwords Characters -->
+                    <div class="characters">
+                        <p class="range-field">
+                            <input type="range" id="passLen" min="12" max="32" value="12"/>
+                        </p>
+                        <p>Slide to select password length</p>
+                    </div>
+                    <br>
+                    <!-- Randomizer Button -->
+                    <div class="generator">
+                        <button class="waves-effect waves-light btn custom-tertiary-bg"
+                            onclick="randomizer()">Generate</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PIN Generator -->
+            <div class="col s12">
+                <div class="main hoverable">
+                    <br>
+                    <!-- Show PIN -->
+                    <div class="password">
+                        <p class="flow-text center" id="pin">PIN</p>
+                    </div>
+                    <div class="characters">
+                        <p class="range-field">
+                            <input type="range" id="pinLen" min="4" max="10" value="4"/>
+                        </p>
+                        <p>Slide to select PIN length</p>
+                    </div>
+                    <br>
+                    <!-- Randomizer Button -->
+                    <div class="generator">
+                        <button class="waves-effect waves-light btn custom-tertiary-bg"
+                            onclick="PinRandomizer()">Generate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <!-- Footer -->
+    <footer class="page-footer custom-tertiary-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Password Randomizer</h5>
+                    <p class="grey-text text-lighten-4">
+                        A small yet powerful tool
+                        designed to enhance online security by creating strong,
+                        unique passwords. Leveraging advanced algorithms and cryptographic techniques, this project
+                        generates complex passwords
+                        that are virtually impossible to guess or crack. By promoting the use of strong passwords, the
+                        Password Randomizer project contributes to a safer online experience for
+                        individuals and businesses alike.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/txtFn" target="_blank"><i
+                                    class="fa-brands fa-facebook fa-xl"></i></a></li>
+                        <li>
+                            <div style="height: 10px;"></div>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/janiphantom/"
+                                target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                        <li>
+                            <div style="height: 10px;"></div>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/txtFn" target="_blank"><i
+                                    class="fa-brands fa-github fa-xl"></i></a></li>
+                        <li>
+                            <div style="height: 10px;"></div>
+                        </li>
+                        <li><a class="grey-text text-lighten-3" href="mailto:delosreyesjohn191@gmail.com"
+                                target="_blank"><i class="fa-solid fa-envelope fa-xl"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                © 2023 One.Opt
+            </div>
+        </div>
+    </footer>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
