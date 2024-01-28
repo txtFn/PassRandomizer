@@ -72,19 +72,28 @@
         <hr>
         <div class="row">
             <!-- Password Generator -->
-            <div class="col s12">
+            <div class="col l6 s12">
                 <div class="main hoverable">
                     <br>
                     <!-- Show Password -->
                     <div class="password">
-                        <p class="flow-text center" id="pass">Password</p>
+                        <div class="row">
+                            <div class="col s1"></div>
+                            <div class="col s10">
+                                <p class="center" id="pass">Password</p>
+                            </div>
+                            <div class="col s1">
+                                <button class="btn-large custom-tertiary-bg right" onclick="clipboardCopy()"><i
+                                        id="copy" class="material-icons">content_copy</i></button>
+                            </div>
+                        </div>
                     </div>
                     <!-- Set Number of Passwords Characters -->
                     <div class="characters">
                         <p class="range-field">
-                            <input type="range" id="passLen" min="12" max="32" value="12"/>
+                            <input type="range" id="passLen" min="12" max="32" value="12" />
                         </p>
-                        <p>Slide to select password length</p>
+                        <p><span>Slide to select password length</span></p>
                     </div>
                     <br>
                     <!-- Randomizer Button -->
@@ -96,18 +105,28 @@
             </div>
 
             <!-- PIN Generator -->
-            <div class="col s12">
+            <div class="col l6 s12">
                 <div class="main hoverable">
                     <br>
                     <!-- Show PIN -->
                     <div class="password">
-                        <p class="flow-text center" id="pin">PIN</p>
+                        <div class="row">
+                            <div class="col s1"></div>
+                            <div class="col s10">
+                                <p class="center" id="pin">PIN</p>
+                            </div>
+                            <div class="col s1">
+                                <button class="btn-large custom-tertiary-bg right"><i id="copy"
+                                        class="material-icons">content_copy</i></button>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="characters">
                         <p class="range-field">
-                            <input type="range" id="pinLen" min="4" max="10" value="4"/>
+                            <input type="range" id="pinLen" min="4" max="10" value="4" />
                         </p>
-                        <p>Slide to select PIN length</p>
+                        <p><span>Slide to select PIN length</span></p>
                     </div>
                     <br>
                     <!-- Randomizer Button -->
@@ -119,7 +138,9 @@
             </div>
         </div>
     </div>
-    <br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
     <!-- Footer -->
     <footer class="page-footer custom-tertiary-bg">

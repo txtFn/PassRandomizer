@@ -6,6 +6,7 @@ function generatePass(password, length) {
         password.push(strongPass[Math.floor(Math.random() * 89)]);
     }
 }
+
 // Strong Password Checker
 function strongPassCheck(password) {
     // Check for at least 8 characters
@@ -35,6 +36,28 @@ function strongPassCheck(password) {
 
     // All criteria met, password is strong
     return true;
+}
+
+//Copy to clipboard
+function clipboardCopy() {
+    var text = document.getElementById('pass');
+
+    if (text.innerHTML == 'Password') {
+        //Checking if the user already generates a pin or pass
+        M.toast({ html: 'Please click the generate button first!'})
+    }
+    else {
+        //Copy generated pass or pin
+        navigator.clipboard.writeText(text.innerHTML);
+        //Change copy icon
+        document.getElementById('copy').innerHTML = 'check';
+        document.getElementById('copy').classList.add('green-text')
+        setTimeout(() => {
+            document.getElementById('copy').innerHTML = 'content_copy';
+            document.getElementById('copy').classList.remove('green-text')
+        }, 1500);
+    }
+
 }
 
 // Pass
