@@ -38,26 +38,46 @@ function strongPassCheck(password) {
     return true;
 }
 
-//Copy to clipboard
-function clipboardCopy() {
-    var text = document.getElementById('pass');
+//Copy to pass to clipboard
+function passCopy() {
+    var passVal = document.getElementById('pass');
 
-    if (text.innerHTML == 'Password' || 'PIN') {
-        //Checking if the user already generates a pin or pass
-        M.toast({ html: 'Please click the generate button first!'})
+    if (passVal.innerHTML == 'Password') {
+        //Checking if the user already generates a pass
+        M.toast({ html: 'Please click the generate button first!' })
     }
     else {
         //Copy generated pass or pin
-        navigator.clipboard.writeText(text.innerHTML);
+        navigator.clipboard.writeText(passVal.innerHTML);
         //Change copy icon
-        document.getElementById('copy').innerHTML = 'check';
-        document.getElementById('copy').classList.add('green-text')
+        document.getElementById('copy1').innerHTML = 'check';
+        document.getElementById('copy1').classList.add('green-text')
         setTimeout(() => {
-            document.getElementById('copy').innerHTML = 'content_copy';
-            document.getElementById('copy').classList.remove('green-text')
+            document.getElementById('copy1').innerHTML = 'content_copy';
+            document.getElementById('copy1').classList.remove('green-text')
         }, 1500);
     }
+}
 
+//Copy to pin to clipboard
+function pinCopy() {
+    var pinVal = document.getElementById('pin');
+
+    if (pinVal.innerHTML == 'PIN') {
+        //Checking if the user already generates a pass
+        M.toast({ html: 'Please click the generate button first!' })
+    }
+    else {
+        //Copy generated pass or pin
+        navigator.clipboard.writeText(pinVal.innerHTML);
+        //Change copy icon
+        document.getElementById('copy2').innerHTML = 'check';
+        document.getElementById('copy2').classList.add('green-text')
+        setTimeout(() => {
+            document.getElementById('copy2').innerHTML = 'content_copy';
+            document.getElementById('copy2').classList.remove('green-text')
+        }, 1500);
+    }
 }
 
 // Pass
