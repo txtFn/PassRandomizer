@@ -42,7 +42,7 @@ function strongPassCheck(password) {
 function clipboardCopy() {
     var text = document.getElementById('pass');
 
-    if (text.innerHTML == 'Password') {
+    if (text.innerHTML == 'Password' || 'PIN') {
         //Checking if the user already generates a pin or pass
         M.toast({ html: 'Please click the generate button first!'})
     }
